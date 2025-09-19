@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历</title>
+    <link rel="stylesheet" href="both.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://tiebapic.baidu.com/forum/pic/item/75f6298aa61ea8d3e0bd1e3ad10a304e251f587a.jpg?tbpicau=2025-09-30-05_6ea757290378ff0418e6fd6447dac566" alt="个人照片" class="profile-img">
+            <h1>夏文斌</h1>
+            <p class="title">广科学生</p>
+        </header>
+        
+        <section id="about">
+            <h2>个人简介</h2>
+            <p>喜爱篮球，hltv赛事，热爱计算机技术</p>
+        </section>
+        
+        <section id="contact">
+            <h2>联系信息</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="icon">📧</div>
+                    <span>xwb20051213@qq.com</span>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📱</div>
+                    <span>+86 138 8888 8888</span>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">🏠</div>
+                    <span>珠海市</span>
+                </div>
+            </div>
+        </section>
+        
+        
+         
+    </div>
+
+    <script>
+        // 简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 技能项点击效果
+            const skills = document.querySelectorAll('.skill');
+            skills.forEach(skill => {
+                skill.addEventListener('click', function() {
+                    this.classList.toggle('skill-active');
+                });
+            });
+            
+            // 页面加载时的淡入效果
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transition = 'opacity 0.5s ease-in-out';
+            });
+            
+            let delay = 0;
+            sections.forEach(section => {
+                setTimeout(() => {
+                    section.style.opacity = 1;
+                }, delay);
+                delay += 200;
+            });
+            
+            // 项目卡片悬停效果
+            const projects = document.querySelectorAll('.project');
+            projects.forEach(project => {
+                project.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                project.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
